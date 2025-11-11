@@ -1,6 +1,6 @@
 #!/bin/bash
 # Author: varoESP
-# Description: Script to install Docker in Linux Ubuntu
+# Description: Script to install Docker
 
 GREEN='\033[38;5;46m'
 NC='\033[0m'
