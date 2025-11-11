@@ -35,7 +35,7 @@ echo -ne "\033[A"
 echo -ne "\033[K"
 echo "[${GREEN}OK${NC}] Download official Docker GPG key"
 
-echo "Agregando repositorio oficial de Docker"
+echo "[] Agregando repositorio oficial de Docker"
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
   $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
@@ -44,13 +44,13 @@ echo -ne "\033[A"
 echo -ne "\033[K"
 echo "[${GREEN}OK${NC}] Agregando repositorio oficial de Docker"
 
-echo "Updating... again..."
+echo "[] Updating... again..."
 sudo apt update > /dev/null 2>&1
 echo -ne "\033[A"
 echo -ne "\033[K"
 echo "[${GREEN}OK${NC}] Updating... again..."
 
-echo "Installing Docker components"
+echo "[] Installing Docker components"
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin > /dev/null 2>&1
 echo -ne "\033[A"
 echo -ne "\033[K"
