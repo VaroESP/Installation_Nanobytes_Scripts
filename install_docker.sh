@@ -5,6 +5,7 @@
 GREEN='\033[38;5;46m'
 NC='\033[0m'
 
+echo
 echo "#=== Starting the Docker installation ===#"
 echo
 echo "[] Remove previous versions..."
@@ -71,4 +72,5 @@ echo
 echo "To use Docker without <sudo>, add your user to the docker group."
 echo "	- sudo usermod -aG docker \$USER"
 echo "Then log out and log back in."
+echo
 
