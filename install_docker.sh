@@ -6,7 +6,7 @@ GREEN='\033[38;5;46m'
 NC='\033[0m'
 
 echo "#=== Starting the Docker installation ===#"
-
+echo
 echo "[] Remove previous versions..."
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do
 	sudo apt remove -y $pkg > /dev/null 2>&1
@@ -35,26 +35,26 @@ echo -ne "\033[A"
 echo -ne "\033[K"
 echo -e "[${GREEN}OK${NC}] Download official Docker GPG key"
 
-echo "[] Agregando repositorio oficial de Docker"
+echo "[] Add official Docker repository"
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
   $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 echo -ne "\033[A"
 echo -ne "\033[K"
-echo -e "[${GREEN}OK${NC}] Agregando repositorio oficial de Docker"
+echo -e "[${GREEN}OK${NC}] Add official Docker repository"
 
 echo "[] Updating... again..."
 sudo apt update > /dev/null 2>&1
 echo -ne "\033[A"
 echo -ne "\033[K"
-echo -e "[${GREEN}OK${NC}] Updating... again..."
+echo -e "[${GREEN}OK${NC}] Update"
 
-echo "[] Installing Docker components"
+echo "[] Install Docker components"
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin > /dev/null 2>&1
 echo -ne "\033[A"
 echo -ne "\033[K"
-echo -e "[${GREEN}OK${NC}] Installing Docker components"
+echo -e "[${GREEN}OK${NC}] Install Docker components"
 echo
 
 echo "Checking Docker service status..."
@@ -67,6 +67,7 @@ echo "	- sudo systemcrl enable docker"
 echo
 
 echo "#=== Installation completed ===#"
+echo
 echo "To use Docker without <sudo>, add your user to the docker group."
 echo "	- sudo usermod -aG docker \$USER"
 echo "Then log out and log back in."
